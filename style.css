@@ -48,7 +48,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 1.8em;
   gap: 1em;
   background-color: var(--form);
   min-width: 40%;
@@ -88,7 +88,6 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5em;
   width: 100%;
   height: 100%;
 }
