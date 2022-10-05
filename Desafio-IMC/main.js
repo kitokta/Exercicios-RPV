@@ -28,8 +28,8 @@ calcular.addEventListener("click", (e) => {
 
       calcular.innerHTML = "Voltar";
       const table = document.getElementById("resultado");
-      visibility(table, "visible")
-      visibility(fieldset, "invisible");
+      visibilidade(table, "visible")
+      visibilidade(fieldset, "invisible");
       const resultadoIMC = IMC(
         parseFloat(peso.value),
         parseFloat(altura.value / 100)
@@ -81,20 +81,20 @@ function resetTable() {
   }
 
   const table = document.getElementById("resultado");
-  visibility(table, "invisible");
+  visibilidade(table, "invisible");
 
   const fieldset = document.getElementById("fieldset");
-  visibility(fieldset, "visible");
+  visibilidade(fieldset, "visible");
   const aviso = document.getElementById("aviso");
   aviso.innerHTML = "Digite seus dados:";
 }
 
 //função pra controlar visibilidade de elementos.
-function visibility(element, visibility) {
-  if (visibility === "visible") {
+function visibilidade(element, visibilidade) {
+  if (visibilidade === "visible") {
     element.classList.add("visible");
     element.classList.remove("invisible");
-  } else if (visibility === "invisible") {
+  } else if (visibilidade === "invisible") {
     element.classList.remove("visible");
     element.classList.add("invisible");
   }
