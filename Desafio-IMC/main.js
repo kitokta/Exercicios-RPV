@@ -23,9 +23,6 @@ calcular.addEventListener("click", (e) => {
         fieldset.disabled = false;
       }, 2000);
     } else {
-      const aviso = document.getElementById("aviso");
-      aviso.innerHTML = `Olá ${nome.value} (${idade.value}), esse é o seu resultado:`;
-
       calcular.innerHTML = "Voltar";
       const table = document.getElementById("resultado");
       visibilidade(table, "visible")
@@ -34,7 +31,8 @@ calcular.addEventListener("click", (e) => {
         parseFloat(peso.value),
         parseFloat(altura.value / 100)
       );
-      resultadoIMC.toFixed(2);
+      const aviso = document.getElementById("aviso");
+      aviso.innerHTML = `Olá ${nome.value} (${idade.value}), o seu IMC é ${resultadoIMC.toFixed(2)}`;
       if (resultadoIMC < 18.5) {
         const magreza = document.getElementById("magreza");
         magreza.style.backgroundColor = "red";
