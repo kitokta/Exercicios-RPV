@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>IMC</title>
+  </head>
+  <body>
+    <header>IMC - Rio Pomba Valley ツ</header>
+    <section>
+    <h1 id="aviso">Digite seus dados:</h1>
+      <form action="POST">
+        <table class="invisible" id="resultado">
+            <thead>
+                <tr id="cabecalho">
+                    <th>IMC</td>
+                    <th>Classificacao</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr class="row" id="magreza">
+                    <td>MENOR QUE 18.5</td>
+                    <td>Magreza</td>
+                </tr>
+                <tr class="row" id="normal">
+                    <td>ENTRE 18,5 E 24,9</td>
+                    <td>Normal</td>
+                </tr>
+                <tr class="row" id="sobrepeso">
+                    <td>ENTRE 25,0 E 29,9</td>
+                    <td>Sobrepeso</td>
+                </tr>
+                <tr class="row" id="obesidade">
+                    <td>ENTRE 30,0 E 39,9</td>
+                    <td>Obesidade</td>
+                </tr>
+                <tr class="row" id="obesidade-grave">
+                    <td>MAIOR QUE 40,0</td>
+                    <td>Obesidade Grave</td>
+                </tr>
+            </tbody>
+        </table>
+        <fieldset class="visible" id="fieldset">
+          <div>
+            <div>
+              <label for="nome">Nome:</label>
+              <input class="input" type="text" name="nome" id="nome" />
+            </div>
+            <div>
+              <label for="idade">Idade:</label>
+              <input class="input" type="text" name="idade" id="idade" />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="peso">Peso:</label>
+              <input class="input" type="text" name="peso" id="peso" />
+            </div>
+            <div>
+              <label for="altura">Altura (cm):</label>
+              <input class="input" type="text" name="altura" id="altura" />
+            </div>
+          </div>
+        </fieldset>
+        <button id="calc">Calcular</button>
+      </form>
+    </section>
+    <footer>
+        <h1>Zanini &trade; 2022</h1>
+        <a href="https://www.linkedin.com/in/gab-zanini-0b9b53243/"><img id="linkedin-icon" src="./assets/imgs/linkedIn.png" alt="linkedIn-icon"></a>
+    </footer>
+  </body>
+  <script src="main.js"></script>
+</html>
