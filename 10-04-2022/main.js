@@ -39,8 +39,5 @@ else {
 }
 
 //Exercicio 5
-let string = "10";
-let check = isNaN(string);
-
 console.log("gab" * 3);
 
