@@ -14,8 +14,10 @@ for (let i = 2; i <= numero; i++) {
 }
 
 //Se não tiver nenhum divisor entre 2 e ele mesmo, é primo
-if (quantidadeDivisor === 0) {
+if (quantidadeDivisor === 0 && numero >= 2) {
   alert("O número é primo");
+} else if (numero < 2) {
+  alert("O número não é primo");
 } else {
   let string = "";
   //Pegando lista de divisores (fazendo assim por causa do alert, teria que ficar repetindo ele)
@@ -24,6 +26,6 @@ if (quantidadeDivisor === 0) {
   }
   string = string.slice(0, -2);
   alert(
-    `O número não é primo ele tem ${quantidadeDivisor} divisores, sendo eles:  ${string}`
+    `O número não é primo, ele tem ${quantidadeDivisor} divisores, sendo eles:  ${string}`
   );
 }
