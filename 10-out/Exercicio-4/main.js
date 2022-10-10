@@ -1,7 +1,7 @@
 //Exercicio 4
 function random(max) {
-    const num = Math.random() * (max-1) +1;
-    console.log(parseInt(num));
+    const num = Math.floor(Math.random() * (max-1) +1);
+    console.log(num);
 }
 
 random(1000);
