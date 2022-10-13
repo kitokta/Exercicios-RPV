@@ -22,7 +22,7 @@ class Carro {
           this.abastecer();
           break;
         }
-      } else if (this.gasolina <= 5) {
+      } else if (this.gasolina === 5) {
         //avisa que está na reserva se <= 5L
         alert("SEU CARRO ESTÁ NA RESERVA");
         let abastecer = prompt("Você gostaria de abastecer? (S) ou (N)");
