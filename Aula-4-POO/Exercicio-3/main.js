@@ -1,12 +1,23 @@
-//Exercicio 3
-const vogais = ['a', 'e', 'i', 'o', 'u'];
-let letra = ""
-do {
-    letra = prompt("Digite uma letra");
-} while (letra.length != 1);
+class Endereco {
+  constructor(rua, bairro, cidade, estado) {
+    this.rua = rua;
+    this.bairro = bairro;
+    this.cidade = cidade;
+    this.estado = estado;
+  }
 
-if (vogais.includes(letra.toLowerCase())) {
-    alert(`(${letra}) é uma vogal`)
-} else {
-    alert(`(${letra}) é uma consoante`)
+  atualizar(propriedade, novaInformacao) {
+    this[propriedade] = novaInformacao;
+  }
 }
+
+const endereco = new Endereco('dos bobos', 'centro', 'Las vegas', 'NV')
+
+console.log(endereco);
+
+endereco.atualizar('rua', 'rev felipe');
+endereco.atualizar('bairro', 'independencia');
+endereco.atualizar('cidade', 'Cataguases')
+endereco.atualizar('estado', 'MG')
+
+console.log(endereco)
