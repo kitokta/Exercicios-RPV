@@ -45,7 +45,10 @@ listaEmpregados[0].setAtributo("nome", "Gab");
 
 Empregado.getSalarioAnual(listaEmpregados);
 
-// Empregado.getEmpregados(listaEmpregados);
-// Empregado.setAumento(listaEmpregados);
+Empregado.getEmpregados(listaEmpregados);
+
+Empregado.setAumento(listaEmpregados);
+
+
 // Empregado.getEmpregados(listaEmpregados);
 
