@@ -28,6 +28,13 @@ class Empregado {
   static getEmpregados(listaEmpregados) {
       console.log(listaEmpregados);
   }
+
+  static getSalarioAnual(listaEmpregados) {
+    for (let index in listaEmpregados) {
+      console.log(`Nome: ${listaEmpregados[index].nome}\nSalario Anual: R$${listaEmpregados[index].salarioMensal * 12}`)
+    }
+    
+  }
 }
 
 let listaEmpregados = [];
@@ -36,7 +43,9 @@ listaEmpregados.push(new Empregado("Gb", "Zanini", 10000));
 listaEmpregados.push(new Empregado("Julia", "Amaral", 15500));
 listaEmpregados[0].setAtributo("nome", "Gab");
 
-Empregado.getEmpregados(listaEmpregados);
-Empregado.setAumento(listaEmpregados);
-Empregado.getEmpregados(listaEmpregados);
+Empregado.getSalarioAnual(listaEmpregados);
+
+// Empregado.getEmpregados(listaEmpregados);
+// Empregado.setAumento(listaEmpregados);
+// Empregado.getEmpregados(listaEmpregados);
 
