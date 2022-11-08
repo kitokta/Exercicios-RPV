@@ -4,13 +4,13 @@ class Conta {
       {
         id: 0,
         tipo: "corrente",
-        saldo: 0,
+        saldo: 1000,
       },
       {
         id: 1,
         tipo: "poupanca",
-        saldo: 0,
-        juros: 0.05,
+        saldo: 1000,
+        juros: 2,
       },
     ];
 
