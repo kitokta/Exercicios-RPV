@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+}
+
+form {
+    margin-top: -250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    gap: 5px;
+    background-color: pink;
+    color: azure;
+    font-weight: bolder;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+form fieldset {
+    border: none;
+}
+
