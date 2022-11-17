@@ -1,0 +1,56 @@
+body {
+  padding: 0px;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: blanchedalmond;
+}
+
+header ul {
+  width: 20%;
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#produto {
+  padding: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+img {
+  height: 200px;
+}
+
+a {
+  color: #000;
+  font-size: 20px;
+}
+
+a:hover {
+  color: #00B7FF;
+}
+
+#infoProduto {
+  width: 40%;
+  border: 1px solid;
+  text-align: center;
+  font-size: 30px;
+}
+
+#infoProduto img {
+  width: 80%;
+}
