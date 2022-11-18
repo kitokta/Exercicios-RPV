@@ -1,0 +1,45 @@
+<div id="form-box">
+  <h1>Cadasto de Usuário:</h1>
+  <form action="/usuario/save" method="post" id="form-cadastro">
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome" required />
+    </div>
+    <div>
+      <label for="endereco">Endereco:</label>
+      <input type="text" name="endereco" id="endereco" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required />
+    </div>
+    <div>
+      <label for="dataNasc">Data de Nascimento:</label>
+      <input type="date" name="dataNasc" id="data-nasc" />
+    </div>
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+<section>
+<p>Lista de Usuários</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID Cliente</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Endereço</th>
+      <th>Data Nascimento</th>
+    </tr>
+    {{#each usuarios}}
+    <tr>
+        <td>{{this.id_usuario}}</td>
+        <td>{{this.nome_usuario}}</td>
+        <td>{{this.email_usuario}}</td>
+        <td>{{this.endereco_usuario}}</td>
+        <td>{{this.data_nascimento_usuario}}</td>
+    </tr>
+    {{/each}}
+  </thead>
+</table>
+</section>
