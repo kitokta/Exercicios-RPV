@@ -1,51 +1,59 @@
-<div id="form-box">
-  <h1>Cadasto de Clientes:</h1>
-  <form action="/cliente/save" method="post" id="form-cadastro">
-    <div>
-      <label for="nome">Nome:</label>
-      <input type="text" name="nome" id="nome" required/>
-    </div>
-    <div>
-      <label for="endereco">Endereco:</label>
-      <input type="text" name="endereco" id="endereco" required/>
-    </div>
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required/>
-    </div>
-    <div>
-      <label for="dataNasc">Data de Nascimento:</label>
-      <input type="date" name="dataNasc" id="data-nasc"/>
-    </div>
-    <div>
-      <label for="dependentes">Qtd. Dependentes:</label>
-      <input type="number" min="0" max="20" name="dependentes" id="dependentes"/>
-    </div>
-    <button type="submit">Cadastrar</button>
-  </form>
-</div>
-<section>
-<p>Lista de Clientes</p>
-<table>
-  <thead>
-    <tr>
-      <th>ID Cliente</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Endereço</th>
-      <th>Data Nascimento</th>
-      <th>Qtd. Dependentes</th>
-    </tr>
-    {{#each clientes}}
-    <tr>
-        <td>{{this.id_cliente}}</td>
-        <td>{{this.nome_cliente}}</td>
-        <td>{{this.email_cliente}}</td>
-        <td>{{this.endereco_cliente}}</td>
-        <td>{{this.data_nascimento_cliente}}</td>
-        <td>{{this.dependentes_cliente}}</td>
-    </tr>
-    {{/each}}
-  </thead>
-</table>
+<nav class="nav nav-pills d-flex p-3 gap-3 align-self-center">
+  <button class="btn btn-primary navbar-btn" id="cadastro-clientes">Cadastrar</button>
+  <button class="btn btn-primary navbar-btn" id="visualizar">Visualizar cadastros</button>
+</nav>
+<section class="content-box p-3">
+  <div id="form-box" class="d-flex flex-column justify-content-center align-items-center invisible">
+    <h1 class="fs-1">Cadasto de Clientes</h1>
+    <form action="/cliente/save" method="post" id="form-cadastro" class="w-50 p-3">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input class="form-control" type="text" name="nome" id="nome" required/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="endereco">Endereco:</label>
+        <input class="form-control" type="text" name="endereco" id="endereco" required/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="email">Email:</label>
+        <input class="form-control" type="email" name="email" id="email" required/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="dataNasc">Data de Nascimento:</label>
+        <input class="form-control" type="date" name="dataNasc" id="data-nasc"/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="dependentes">Qtd. Dependentes:</label>
+        <input class="form-control" type="number" min="0" max="20" name="dependentes" id="dependentes"/>
+      </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+  
+  <section id="table-box" class="table-box d-flex flex-column justify-content-center align-items-center invisible">
+  <p class="fs-1">Lista de Clientes</p>
+  <table class="table w-75 p-3 table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID Cliente</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Endereço</th>
+        <th>Data Nascimento</th>
+        <th>Qtd. Dependentes</th>
+      </tr>
+    </thead>
+      {{#each clientes}}
+      <tr>
+          <td>{{this.id_cliente}}</td>
+          <td>{{this.nome_cliente}}</td>
+          <td>{{this.email_cliente}}</td>
+          <td>{{this.endereco_cliente}}</td>
+          <td>{{this.data_nascimento_cliente}}</td>
+          <td>{{this.dependentes_cliente}}</td>
+      </tr>
+      {{/each}}
+    
+  </table>
+  </section>
 </section>
