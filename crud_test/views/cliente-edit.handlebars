@@ -1,0 +1,29 @@
+<div id="form-box" class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="fs-1">Cadasto de Clientes</h1>
+    {{#with cliente}}
+    <form action="/cliente/update/{{id_cliente}}" method="post" id="form-cadastro" class="w-50 p-3">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input class="form-control" type="text" name="nome" id="nome" value="{{nome_cliente}}" required/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="endereco">Endereco:</label>
+        <input class="form-control" type="text" name="endereco" id="endereco" value="{{endereco_cliente}}" required/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="email">Email:</label>
+        <input class="form-control" type="email" name="email" id="email" value="{{email_cliente}}" required/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="dataNasc">Data de Nascimento:</label>
+        <input class="form-control" type="date" name="dataNasc" id="data-nasc" value="{{data_nascimento_cliente}}"/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="dependentes">Qtd. Dependentes:</label>
+        <input class="form-control" type="number" min="0" max="20" name="dependentes" id="dependentes" value="{{dependentes_cliente}}"/>
+      </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      {{/with}}
+    </form>
+    
+  </div>

@@ -45,6 +45,7 @@ app.get('/clientes', (req, res) => {
     })
 })
 
+//cadastrar um cliente
 app.post('/cliente/save', (req, res) => {
     const nome = req.body.nome;
     const endereco = req.body.endereco;
@@ -56,7 +57,87 @@ app.post('/cliente/save', (req, res) => {
 
     db.query(sql, (err) => {
         if(err) throw err;
-        res.render('cadastro_sucesso');
+        res.redirect('/clientes');
+    })
+})
+
+//exibir detalhes de um cliente
+app.get('/cliente/delete/:id', (req, res) =>{
+    const id = req.params.id;
+    
+    const sql = `DELETE FROM CLIENTE
+                WHERE id_cliente = ${id}`;
+    
+    db.query(sql, (erro) => {
+        if(erro){
+            console.log(erro);
+            return;
+        }
+        res.redirect('/clientes');
+    })
+});
+
+app.get('/cliente/:id', (req, res) =>{
+    const id = req.params.id;
+    
+    const sql = `SELECT * FROM CLIENTE
+                WHERE id_cliente = ${id}`;
+    
+    db.query(sql, (erro, resultado) => {
+        if(erro){
+            console.log(erro);
+            return;
+        }
+        const cliente = resultado[0];
+        res.render('cliente', {cliente});
+    })
+});
+
+//ir para tela de edicao de um cliente
+app.get('/cliente/edit/:id', (req, res) =>{
+    const id = req.params.id;
+    
+    const sql = `select id_cliente, 
+                        nome_cliente, 
+                        endereco_cliente, 
+                        email_cliente, 
+                        data_nascimento_cliente,
+                        dependentes_cliente 
+                    from CLIENTE
+                    where id_cliente = ${id}`;
+    
+    db.query(sql, (erro, result) => {
+        if(erro){
+            console.log(erro);
+            return;
+        }
+        const cliente = result[0];
+        res.render('cliente-edit', {cliente});
+    })
+
+});
+
+app.post('/cliente/update/:id', (req, res) => {
+    const id = req.params.id;
+    const nome = req.body.nome;
+    const endereco = req.body.endereco;
+    const nascimento = req.body.dataNasc;
+    const email = req.body.email;
+    const dependentes = req.body.dependentes;
+
+    const sql = `UPDATE CLIENTE
+                 SET
+                 nome_cliente = '${nome}',
+                 endereco_cliente = '${endereco}',
+                 data_nascimento_cliente = '${nascimento}',
+                 email_cliente = '${email}',
+                 dependentes_cliente = ${dependentes}
+                 WHERE
+                 id_cliente = ${id}`;
+    
+    db.query(sql, (err) => {
+        if (err) throw err;
+        res.redirect('/clientes')
     })
 })
 

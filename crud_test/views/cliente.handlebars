@@ -1,0 +1,30 @@
+{{#with cliente}}
+<section class="d-flex flex-column align-items-center justify-content-center gap-3 p-3">
+<span class="fs-1">Detalhes do Cliente {{nome_cliente}}</span>
+<table class="table thead-dark table-bordered w-50 fs-5">
+    <tr>
+        <th>#ID</th>
+        <td>{{id_cliente}}</td>
+    </tr>
+    <tr>
+        <th>Endereco:</th>
+        <td>{{endereco_cliente}}</td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>{{email_cliente}}</td>
+    </tr>
+    <tr>
+        <th>Data de Nascimento:</th>
+        <td>{{data_nascimento_cliente}}</td>
+    </tr>
+    <tr>
+        <th>Dependentes:</th>
+        <td>{{dependentes_cliente}}</td>
+    </tr>
+</table>
+<form action="/clientes" method="get">
+    <button class="btn btn-primary align-center w-10" type="submit">Voltar</button>
+</form>
+</section>
+{{/with}}
